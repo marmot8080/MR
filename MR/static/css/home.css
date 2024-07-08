@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-buttons button {
+    margin-left: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f4f4f4;
+}
+
+.movie-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: scroll;
+    max-height: 70vh;
+}
+
+.movie {
+    background-color: white;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.movie img {
+    width: 100px;
+    height: auto;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+
+.star-rating {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 20px;
+    background: url('../images/star-empty.png') repeat-x 0 0;
+}
+
+.star-rating:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background: url('../images/star-full.png') repeat-x 0 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.contact-icons a {
+    margin-right: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.contact-form {
+    margin-top: 1rem;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 0.5rem 1rem;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

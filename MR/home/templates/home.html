@@ -1,11 +1,52 @@
-<!-- home/templates/home.html -->
+{% load static %}
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Home</title>
-  </head>
-  <body>
-    home page
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <!-- 상단 메뉴바 -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Genres</a></li>
+                <li><a href="#">MyPage</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button onclick="login()">Login</button>
+                <button onclick="register()">Register</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 중단부: vertical slide 가능한 영화 리스트 -->
+    <main>
+      <section class="movie-list">
+          <div class="movie" data-rating="7.5">
+              <img src="" alt="Movie 1">
+              <h3>Movie Title 1</h3>
+              <div class="star-rating" data-rating="7.5"></div>
+          </div>
+          <div class="movie" data-rating="8.0">
+              <img src="" alt="Movie 2">
+              <h3>Movie Title 2</h3>
+              <div class="star-rating" data-rating="8.0"></div>
+          </div>
+          <!-- 추가 영화 목록 -->
+      </section>
+  </main>
+
+    <!-- 하단: contact icon 및 문의하기 -->
+    <footer>
+        <div class="contact-icons">
+            <a href="https://github.com/marmot8080/MR" target="_blank">GitHub</a>
+            <a href="mailto:your-email@gmail.com">Gmail</a>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/home.js' %}"></script>
+</body>
 </html>
