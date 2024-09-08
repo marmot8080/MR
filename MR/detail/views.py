@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from home.models import MovieInfo
+from .utils import *
 
 def detail(request, movie_id):
-    return render(request, 'detail.html')
+    details = get_movie_details(movie_id)
+
+    return render(request, 'detail.html', context=details)
