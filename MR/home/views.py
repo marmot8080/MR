@@ -3,11 +3,11 @@ from .utils import *
 
 def home(request):
 
-    context = {
+    movie_info = {
         'recent_movies': get_recent_popular_movie_list(),
         'horror_movies': get_movie_list_by_genre(),
         'comedy_movies': get_movie_list_by_genre(),
         'animation_movies': get_movie_list_by_genre(),
     }
 
-    return render(request, 'home.html', context)
+    return render(request, 'home.html', movie_info)
