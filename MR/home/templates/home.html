@@ -11,9 +11,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Genres</a></li>
-                <li><a href="#">MyPage</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/genres">Genres</a></li>
+                <li><a href="/mypage">MyPage</a></li>
             </ul>
             <div class="nav-buttons">
                 <button onclick="login()">Login</button>
@@ -24,37 +24,15 @@
 
     <main>
       <section class="movie-list">
-          <div class="movie">
-              <img src="" alt="Movie 1">
-              <h3>Movie Title 1</h3>
-              <div class="star-rating" data-rating="7.5"></div>
-          </div>
-          <div class="movie">
-              <img src="" alt="Movie 2">
-              <h3>Movie Title 2</h3>
-              <div class="star-rating" data-rating="8.0"></div>
-          </div>
-          <div class="movie">
-              <img src="" alt="Movie 3">
-              <h3>Movie Title 3</h3>
-              <div class="star-rating" data-rating="8.0"></div>
-          </div>
-          <div class="movie">
-              <img src="" alt="Movie 4">
-              <h3>Movie Title 4</h3>
-              <div class="star-rating" data-rating="8.0"></div>
-          </div>
-          <div class="movie">
-              <img src="" alt="Movie 5">
-              <h3>Movie Title 6</h3>
-              <div class="star-rating" data-rating="8.0"></div>
-          </div>
-          <div class="movie">
-              <img src="" alt="Movie 6">
-              <h3>Movie Title 6</h3>
-              <div class="star-rating" data-rating="8.0"></div>
-          </div>
-          <!-- 추가 영화 목록 -->
+        {% for recent_movie in movie_info.recent_movies %}
+        <div class="movie">
+            <img src="{{ recent_movie.image }}" alt="{{ recent_movie.title }}">
+            <h3>{{ movie.title }}</h3>
+            <div class="star-rating" data-rating="{{ recent_movie.rating }}">
+                Rating: {{ recent_movie.rating }}
+            </div>
+        </div>
+        {% endfor %}
       </section>
   </main>
 
