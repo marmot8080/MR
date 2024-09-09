@@ -15,3 +15,13 @@ function login() {
 function register() {
     alert('Register functionality coming soon!');
 }
+
+function decreaseValue() {
+    const slider = document.getElementById('slider');
+    slider.value = Math.max(slider.min, slider.value - 10);
+}
+
+function increaseValue() {
+    const slider = document.getElementById('slider');
+    slider.value = Math.min(slider.max, slider.value + 10);
+}

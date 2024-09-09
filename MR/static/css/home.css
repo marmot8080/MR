@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #212121;
     color: white;
     padding: 1rem;
 }
@@ -47,7 +47,7 @@ nav ul li a {
 main {
     flex: 1;
     padding: 2rem;
-    background-color: #f4f4f4;
+    background-color: #282828;
 }
 
 .movie-list {
@@ -57,20 +57,78 @@ main {
     scroll-snap-type: x mandatory;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* 슬라이더 감싸는 컨테이너 */
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 기본 슬라이더 숨기기 */
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0;
+    height: 0;
+    opacity: 0; /* 완전히 숨기기 */
+}
+
+/* 화살표 버튼 스타일 */
+.slider-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    top: 50%;
+    z-index: 10;
+    transition: background 0.3s ease;
+    color: #555;
+}
+
+/* 화살표 버튼에 마우스를 올렸을 때 그라데이션 효과 */
+.slider-btn:hover {
+    background: linear-gradient(to right, rgb(36, 36, 36) 0%, transparent 100%);
+    color: white; /* 텍스트 색상 변경 */
+}
+
+/* 오른쪽 버튼에 대한 별도 그라데이션 (반대 방향) */
+.slider-btn.right:hover {
+    background: linear-gradient(to left, rgb(36, 36, 36) 0%, transparent 100%);
+}
+
 .movie {
     min-width: 200px;
-    margin-right: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 1px;
+    background-color: #ffffff00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     scroll-snap-align: start;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
     text-align: center;
+    color: white;
+}
+
+.movie-title {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: white;
 }
 
 .movie img {
     width: 100%;
     height: auto;
+    color: white;
 }
 
 .star-rating {
@@ -79,6 +137,7 @@ main {
     width: 100px;
     height: 20px;
     background: url('../images/star-empty.png') repeat-x 0 0;
+    color: white;
 }
 
 .star-rating:before {
@@ -88,10 +147,11 @@ main {
     width: 0;
     height: 100%;
     background: url('../images/star-full.png') repeat-x 0 0;
+    color: white;
 }
 
 footer {
-    background-color: #333;
+    background-color: #212121;
     color: white;
     padding: 1rem;
     text-align: center;

@@ -23,16 +23,21 @@
     </header>
 
     <main>
-      <section class="movie-list">
+      <section class="slider-container">
+        <button class="slider-btn left" onclick="decreaseValue()">&#9664;</button>
+        <input type="range" min="0" max="100" value="0" class="slider" id="slider">
         {% for recent_movie in movie_info.recent_movies %}
         <div class="movie">
-            <img src="{{ recent_movie.image }}" alt="{{ recent_movie.title }}">
-            <h3>{{ movie.title }}</h3>
-            <div class="star-rating" data-rating="{{ recent_movie.rating }}">
-                Rating: {{ recent_movie.rating }}
-            </div>
+            <a href="/detail/{{ recent_movie.id }}">
+                <img src="{{ recent_movie.image }}" alt="{{ recent_movie.title }}">
+                <div class="movie-title">{{ recent_movie.title }}</div>
+                <div class="star-rating" data-rating="{{ recent_movie.rating }}">
+                    Rating: {{ recent_movie.rating }}
+                </div>
+            </a>
         </div>
         {% endfor %}
+        <button class="slider-btn right" onclick="increaseValue()">&#9654;</button>
       </section>
   </main>
 
